@@ -1,0 +1,11 @@
+node_modules/
+/app-host/build/
+/ui/dist/
+/ui/*.tsbuildinfo
+/desktop/build/
+/desktop/dist*/
+/desktop/releases/
+/tools/lib/
+/workspace/
+/cache/
+/.work/

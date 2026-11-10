@@ -1,0 +1,20 @@
+{
+  "name": "world-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "setup": "npm ci && npm --prefix ui ci && npm --prefix desktop ci",
+    "build": "node tools/build-host.mjs && npm --prefix ui run build",
+    "start": "node tools/desktop.mjs",
+    "assets": "node tools/assets/cli.mjs --workspace workspace",
+    "package:win": "npm --prefix desktop run package:win",
+    "package:linux": "npm --prefix desktop run package:linux"
+  },
+  "dependencies": {
+    "deepslate": "0.27.1",
+    "fflate": "0.8.3",
+    "three": "0.186.0"
+  }
+}

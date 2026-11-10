@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "world": "overworld",
+  "generator": "overworld",
+  "seed": 1729,
+  "bounds": { "min": [-2560, -2560], "max": [2559, 2559] },
+  "parameters": {}
+}

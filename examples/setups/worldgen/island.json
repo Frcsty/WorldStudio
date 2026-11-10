@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "world": "island",
+  "generator": "island",
+  "seed": 4242,
+  "bounds": { "min": [-1536, -1536], "max": [1535, 1535] },
+  "parameters": {}
+}

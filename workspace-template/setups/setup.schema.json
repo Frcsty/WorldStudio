@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "World Studio setup",
+  "type": "object",
+  "required": ["schemaVersion", "id", "name", "adapter", "folders", "worlds", "reviewer", "reviewExport", "exports"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "id": { "$ref": "#/$defs/id", "description": "Must match the setup folder name." },
+    "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+    "description": { "type": "string" },
+    "adapter": { "enum": ["scene", "trees", "worldgen"], "description": "Built-in backend adapter." },
+    "folders": {
+      "type": "object", "required": ["worlds", "assets", "projects"], "additionalProperties": false,
+      "properties": {
+        "worlds": { "$ref": "#/$defs/path", "description": "Imported world snapshots, one folder per world." },
+        "assets": { "$ref": "#/$defs/path", "description": "Render bundle with asset-index.json. The default bundle is render/default." },
+        "projects": { "$ref": "#/$defs/path", "description": "Editable scene projects and their revisions." }
+      }
+    },
+    "worlds": {
+      "type": "object", "required": ["exclude", "references"], "additionalProperties": false,
+      "properties": {
+        "exclude": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" }, "description": "World folders to hide." },
+        "references": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" }, "description": "Worlds whose layout is read-only." }
+      }
+    },
+    "worldCodecs": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "type": "string", "examples": ["anvil", "sponge-schem-v3", "mcedit-schematic", "structure-nbt", "json-sections-v1"] },
+      "description": "Import formats this setup accepts, including plugin codecs from codecs/. Leave out to accept every available format."
+    },
+    "reviewer": { "type": "string", "minLength": 1, "maxLength": 100, "description": "Name recorded on review decisions." },
+    "reviewExport": { "$ref": "#/$defs/id", "description": "Export target bound to a review." },
+    "exports": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["id", "name", "format", "folder"], "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "name": { "type": "string", "minLength": 1 },
+          "format": { "type": "string", "examples": ["scene-json"] },
+          "folder": { "$ref": "#/$defs/path" }
+        }
+      }
+    },
+    "benchModels": { "type": "object", "additionalProperties": { "type": "string" }, "description": "Bench design name to a rig ID in this setup's assets, e.g. custom/props/bench." },
+    "options": { "type": "object", "description": "Adapter-specific options." }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{0,95}$" },
+    "path": { "type": "string", "minLength": 1, "description": "Relative to the workspace folder. Linked paths and traversal are rejected." }
+  }
+}

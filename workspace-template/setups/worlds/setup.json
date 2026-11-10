@@ -1,0 +1,28 @@
+{
+  "$schema": "../setup.schema.json",
+  "schemaVersion": 1,
+  "id": "worlds",
+  "name": "Worlds",
+  "description": "Your imported Minecraft worlds, schematics and structures.",
+  "adapter": "scene",
+  "folders": {
+    "worlds": "setups/worlds/worlds",
+    "assets": "render/default",
+    "projects": "setups/worlds/projects"
+  },
+  "worlds": {
+    "exclude": [],
+    "references": []
+  },
+  "reviewer": "Owner",
+  "reviewExport": "scene",
+  "exports": [
+    {
+      "id": "scene",
+      "name": "Scene JSON",
+      "format": "scene-json",
+      "folder": "exports/worlds"
+    }
+  ],
+  "benchModels": {}
+}

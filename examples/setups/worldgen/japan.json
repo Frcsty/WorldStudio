@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "world": "japan",
+  "generator": "japan",
+  "seed": 8128,
+  "bounds": { "min": [-512, -512], "max": [511, 511] },
+  "parameters": {}
+}

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "world": "trees-gallery",
+  "style": "broadleaf",
+  "species": "oak",
+  "sampleSpecies": [
+    "birch",
+    "birch",
+    "birch",
+    "oak",
+    "oak",
+    "oak",
+    "spruce",
+    "cherry",
+    "spruce",
+    "dark_oak",
+    "jungle",
+    "acacia"
+  ],
+  "sampleVariants": [
+    "slim",
+    "large",
+    "small",
+    "leaning",
+    "large",
+    "fallen",
+    "slim",
+    "small",
+    "fallen",
+    "leaning",
+    "large",
+    "small"
+  ],
+  "sampleOrigins": [
+    [
+      -32,
+      -16
+    ],
+    [
+      0,
+      -16
+    ],
+    [
+      32,
+      -16
+    ],
+    [
+      -32,
+      16
+    ],
+    [
+      0,
+      16
+    ],
+    [
+      32,
+      16
+    ],
+    [
+      -32,
+      -48
+    ],
+    [
+      0,
+      -48
+    ],
+    [
+      32,
+      -48
+    ],
+    [
+      -32,
+      48
+    ],
+    [
+      0,
+      48
+    ],
+    [
+      32,
+      48
+    ]
+  ],
+  "seed": 1729,
+  "count": 12,
+  "columns": 3,
+  "spacing": 32,
+  "groundY": 63,
+  "parameters": {}
+}

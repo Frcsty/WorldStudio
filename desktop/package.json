@@ -1,0 +1,16 @@
+{
+  "name": "world-studio-desktop",
+  "version": "1.0.0",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "package:win": "node package.mjs --platform win32",
+    "package:linux": "node package.mjs --platform linux"
+  },
+  "devDependencies": {
+    "electron": "44.4.5",
+    "@electron/packager": "20.3.0"
+  },
+  "license": "MIT"
+}
